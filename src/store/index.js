@@ -1,15 +1,19 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    selected: false,
+    todayTasks: [],
+    todos: [],
+    currentIndex: -1,
   },
-  mutations: {
+  getters: {
+    todayTasks: (state) => state.todayTasks,
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  mutations: {},
+  actions: {},
+  modules: {},
+});
