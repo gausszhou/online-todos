@@ -1,7 +1,7 @@
 <template>
   <div
     class="gradient-color"
-    :class="{ 'gradient-color-active': active }"
+    :class="{ 'gradient-color__active': active }"
     :style="{ backgroundImage: gradientColor }"
   ></div>
 </template>
@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     gradientColor() {
-      return `linear-gradient(to top, 30% ${this.colors[0]},${this.colors[1]})`;
+      return `linear-gradient(to top, ${this.colors[0]} 30%,${this.colors[1]})`;
     },
   },
 };
@@ -31,8 +31,8 @@ export default {
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease;
-  .gradient-color-active {
-    opacity: 1;
-  }
+}
+.gradient-color__active {
+  opacity: 1;
 }
 </style>

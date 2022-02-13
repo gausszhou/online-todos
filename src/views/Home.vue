@@ -4,7 +4,10 @@
     <Avatar />
     <Gradient />
     <TodoList />
-    <router-view></router-view>
+    <TodoDetail />
+    <TodoEditing />
+    <FloatingButton />
+    <!-- <router-view></router-view> -->
   </div>
 </template>
 
@@ -12,7 +15,10 @@
 import AppBar from "@/components/AppBar.vue";
 import Avatar from "@/components/Avatar.vue";
 import Gradient from "@/components/Gradient.vue";
-import TodoList from "@/components/TodoList.vue";
+import FloatingButton from "@/components/FloatingButton.vue";
+import TodoList from "@/components/TodoModule/TodoList.vue";
+import TodoDetail from "@/components/TodoModule/TodoDetail.vue";
+import TodoEditing from "@/components/TodoModule/TodoEditing.vue";
 export default {
   name: "Home",
   components: {
@@ -20,6 +26,9 @@ export default {
     Avatar,
     Gradient,
     TodoList,
+    TodoDetail,
+    TodoEditing,
+    FloatingButton,
   },
 };
 </script>
@@ -29,7 +38,6 @@ export default {
   width: 100%;
   height: 100vh;
   color: #fff;
-  background-color: #353443;
   overflow: hidden;
 }
 </style>

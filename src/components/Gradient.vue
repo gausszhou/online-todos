@@ -1,7 +1,7 @@
 <template>
   <div class="gradient">
     <GradientColor
-      v-for="{ todo, index } in todos"
+      v-for="(todo, index) in todos"
       :key="todo.name"
       :colors="todo.colors"
       :active="index <= currentIndex"

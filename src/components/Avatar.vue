@@ -1,5 +1,5 @@
 <template>
-  <div class="avatar" :class="{ 'avatar-selected': !!selected }">
+  <div class="avatar" :class="{ 'avatar__selected': !!selected }">
     <div class="avatar-face">
       <img src="../assets/images/avatar.jpg" alt="" />
     </div>
@@ -48,7 +48,7 @@ export default {
   transition: all 0.5s ease;
 }
 
-.avatar-selected {
+.avatar__selected {
   transform: translate3d(0 20px, 0);
   opacity: 0;
 }

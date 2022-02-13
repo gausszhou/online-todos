@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 
 import "@/assets/css/font-awesome.css";
+import "@/assets/styles/common.scss";
 
 Vue.config.productionTip = false
 
