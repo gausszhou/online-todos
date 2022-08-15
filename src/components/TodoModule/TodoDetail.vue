@@ -1,7 +1,7 @@
 <template>
   <transition name="show" @enter="handleEnter" @leave="handleLeave">
     <div class="todo-detail" v-if="selected">
-      <app-bar @left="unselectTodo" />
+      <AppBar @left="unselectTodo" title="" right="ellipsis-v" />
       <TodoItem :todo="selected.todo" :active="true" @close="unselectTodo" />
     </div>
   </transition>
@@ -59,13 +59,13 @@ export default {
 
 <style lang="scss">
 .todo-detail {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   border-radius: 0;
   background-color: white;
   color: #666;
-  will-change: top, left, width, height;
+  // will-change: top, left, width, height;
   .todo {
     margin: 0;
     margin-top: -44px;

@@ -1,66 +1,16 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import { tomorrow } from "../shared";
+import todos from "./todos";
 
 Vue.use(Vuex);
-
 export default new Vuex.Store({
   state: {
     selected: null,
     unselect: null,
     editing: null,
     currentIndex: 0,
-    todos: [
-      {
-        icon: "user",
-        name: "Personal",
-        tasks: [
-          {
-            id: 1,
-            title: "Dating",
-            date: new Date(),
-            done: false,
-            deleted: false,
-          },
-        ],
-        colors: ["#ff6262", "#ffa947"],
-      },
-      {
-        icon: "home",
-        name: "Home",
-        tasks: [
-          {
-            id: 2,
-            title: "House Keeping",
-            date: new Date(),
-            done: true,
-            deleted: false,
-          },
-        ],
-        colors: ["#2c7d59", "#3ba776"],
-      },
-      {
-        icon: "suitcase",
-        name: "Work",
-        tasks: [
-          {
-            id: 3,
-            title: "Design Sprint",
-            date: new Date(),
-            done: true,
-            deleted: false,
-          },
-          {
-            id: 4,
-            title: "Icon Set Design for Mobile App",
-            date: new Date(),
-            done: false,
-            deleted: false,
-          },
-        ],
-        colors: ["#5b9df9", "#47bfff"],
-      },
-    ],
+    todos,
   },
   getters: {
     currentTodo(state) {
@@ -82,6 +32,7 @@ export default new Vuex.Store({
     selectTodo(state, selected) {
       state.unselect = null;
       state.selected = selected;
+      console.log(1);
     },
     unselectTodo(state) {
       state.unselect = state.selected;
@@ -91,6 +42,10 @@ export default new Vuex.Store({
       if (state.currentIndex < state.todos.length - 1) {
         state.currentIndex++;
       }
+    },
+    calcTodo(state, payload) {
+      console.log(payload)
+      state.currentIndex == payload;
     },
     prevTodo(state) {
       if (state.currentIndex > 0) {

@@ -2,7 +2,7 @@
   <ul class="login-tabs">
     <li><span>Sign In</span></li>
     <li class="login-tabs-or">or</li>
-    <li><span>Sing Up</span></li>
+    <li><span>Sign Up</span></li>
   </ul>
 </template>
 

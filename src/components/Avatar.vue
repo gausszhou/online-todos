@@ -19,8 +19,6 @@ export default {
   data() {
     return {
       today: new Date(),
-      // selected: false,
-      // todaysTasks: [],
     };
   },
   computed: {
@@ -38,19 +36,19 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"  >
 .avatar {
   padding: 0 40px;
-  height: 300px;
+  height: 210px;
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
+  justify-content: flex-end;
   transition: all 0.5s ease;
 }
 
 .avatar__selected {
-  transform: translate3d(0 20px, 0);
   opacity: 0;
+  transform: translate3d(0 20px, 0);
 }
 
 .avatar-face {
@@ -67,7 +65,7 @@ export default {
 }
 
 .avatar-name {
-  margin-top: 32px;
+  margin-top: 10px;
   padding: 0 6px;
   font-size: 32px;
   letter-spacing: 1px;
@@ -82,7 +80,7 @@ export default {
 }
 
 .avatar-date {
-  margin-top: 44px;
+  margin-top: 24px;
   margin-bottom: 16px;
   padding: 0 6px;
   font-size: 14px;

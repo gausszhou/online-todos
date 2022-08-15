@@ -6,7 +6,7 @@
     <LoginTabs @click.native="switchState" />
     <LoginForm />
     <GradientColor
-      style="position: fixed; top: 0; z-index: -1"
+      style="position: absolute; top: 0; z-index: -1"
       :colors="['#47bfff', '#5b9df9']"
       :active="true"
     />

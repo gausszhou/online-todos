@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+
 import "@/assets/css/font-awesome.css";
-import "@/assets/styles/common.scss";
+import "@/styles/common.scss";
 
 Vue.config.productionTip = false
 

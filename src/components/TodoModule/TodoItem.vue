@@ -1,11 +1,13 @@
 <template>
-  <div class="todo" :class="{ 'todo__selected': selected }">
-    <div class="todo-head" @click="handleClick">
+  <div class="todo" @dblclick="handleClick" :class="{ 'todo__selected': selected }">
+    <!--  -->
+    <div class="todo-head">
       <div class="todo-icon" :style="{ color }">
         <i :class="['fa', `fa-${todo.icon}`]"></i>
       </div>
-      <div class="todo-menu"><i class="fa fa-ellipsis-v"></i></div>
+      <div class="todo-menu"  ><i class="fa fa-ellipsis-v"></i></div>
     </div>
+    <!--  -->
     <div class="todo-body">
       <p class="todo-tips">{{ todo.tasks.length }} Tasks</p>
       <h3 class="todo-title">{{ todo.name }}</h3>
@@ -114,23 +116,31 @@ export default {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   color: #666;
 }
+
 .todo__selected {
   visibility: hidden;
 }
+
 .todo-head {
   display: flex;
   padding: 20px;
   height: 44px;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   transform: translate3d(0, 0, 0);
   will-change: transform;
+
+  .todo-menu {
+    color: #777;
+  }
 }
+
 .todo-body {
   padding: 0 20px;
-  transform: translate3d(0, 189px, 0);
+  transform: translate3d(0, 190px, 0);
   will-change: transform;
 }
+
 .todo-icon {
   display: flex;
   width: 44px;
@@ -141,43 +151,48 @@ export default {
   align-items: center;
   font-size: 18px;
 }
-.todo-menu {
-  color: #eee;
-}
+
 .todo-tips {
   opacity: 0.6;
   font-size: 13px;
   font-weight: 600;
 }
+
 .todo-title {
   margin-top: 6px;
   font-size: 32px;
 }
+
 .todo-progress {
   display: flex;
   align-items: center;
   margin-top: 30px;
 }
+
 .todo-progress-line {
   margin-right: 10px;
   flex: 1;
   height: 3px;
   background-color: #eee;
+
   i {
     display: block;
     height: 100%;
     transition: all 0.3s ease;
   }
 }
+
 .todo-progress-num {
   font-size: 12px;
 }
+
 .todo-tasks {
   opacity: 0;
   transform: scale3d(1, 0, 1);
-  // transform-origin: top;
-  // will-change: transform opacity;
+  transform-origin: top;
+  will-change: transform opacity;
 }
+
 .todo-subtitle {
   margin-top: 32px;
   margin-bottom: 8px;

@@ -1,40 +1,38 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "*",
-    redirect: { name: "Login" },
+    path: '*',
+    redirect: { name: 'Home' }
   },
   {
-    path: "/home",
-    name: "Home",
-    component: () => import(/* webpackChunkName: "home" */ "@/views/Home.vue"),
+    path: '/home',
+    name: 'Home',
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
   },
   {
-    path: "/login",
-    name: "Login",
-    component: () =>
-      import(/* webpackChunkName: "login" */ "@/views/Login.vue"),
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "login" */ '@/views/Login.vue')
   },
   {
-    path: "/about",
-    name: "About",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "@/views/About.vue"),
-  },
-];
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+  }
+]
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
-  routes,
-});
+  routes
+})
 
 router.beforeEach((to, form, next) => {
-  next();
-});
+  next()
+})
 
-export default router;
+export default router

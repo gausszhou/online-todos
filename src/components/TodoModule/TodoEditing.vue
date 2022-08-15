@@ -1,7 +1,7 @@
 <template>
   <transition name="edit">
     <div class="todo-editing" v-if="!!editing">
-      <app-bar title="New Tasks" left="close" @left="toggleEditing" />
+      <AppBar title="New Tasks" left="close" right="" @left="toggleEditing" />
       <div class="todo-editing-head">
         <p>What tasks are you planning to perform?</p>
       </div>
@@ -38,7 +38,8 @@ export default {
 
 <style lang="scss">
 .todo-editing {
-  position: fixed;
+  position: absolute;
+  z-index: 998;
   left: 0;
   top: 0;
   width: 100%;

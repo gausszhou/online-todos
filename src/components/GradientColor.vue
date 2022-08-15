@@ -27,10 +27,12 @@ export default {
 <style lang="scss">
 .gradient-color {
   position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
   transition: opacity 0.5s ease;
+  opacity: 0;
 }
 .gradient-color__active {
   opacity: 1;

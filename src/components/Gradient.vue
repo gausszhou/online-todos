@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
 .gradient {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;

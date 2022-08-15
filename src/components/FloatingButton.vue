@@ -30,7 +30,8 @@ export default {
 
 <style lang="scss">
 .floating-button {
-  position: fixed;
+  position: absolute;
+  z-index: 999;
   right: 44px;
   bottom: 64px;
   margin: 0;
