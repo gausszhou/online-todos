@@ -1,7 +1,7 @@
 <template>
   <span class="login-textfield">
     <label><i v-if="icon" :class="['fa', `fa-${icon}`]"></i>{{ label }}</label>
-    <input type="text" />
+    <input v-model="value" :type="type" />
   </span>
 </template>
 
@@ -14,7 +14,13 @@ export default {
     icon: {
       type: String,
     },
-  },
+    type:{
+      type:String
+    },
+    value:{
+      type:String
+    }
+  }
 };
 </script>
 
@@ -24,7 +30,7 @@ export default {
   display: flex;
   padding: 10px;
   width: 100%;
-  border-radius: 2px;
+  border-radius: var(--app-border-radius);
   background-color: #fff;
   box-shadow: 0 1px 1px #0066d0;
   label{

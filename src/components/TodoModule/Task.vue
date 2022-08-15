@@ -63,7 +63,7 @@ export default {
 }
 .task label:before {
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: var(--app-border-radius);
   background-color: white;
 }
 .task label:after {
@@ -75,7 +75,7 @@ export default {
   width: 10px;
   height: 10px;
   padding: 3px;
-  border-radius: 2px;
+  border-radius: var(--app-border-radius);
   font: normal normal normal 10px/1 FontAwesome;
   color: white;
   background-color: #ccc;

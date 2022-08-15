@@ -32,7 +32,7 @@ export default {
     height: 40px;
     border: none;
     outline: none;
-    border-radius: 2px;
+    border-radius: var(--app-border-radius);
     background-color: #0066d0;
   }
   label {

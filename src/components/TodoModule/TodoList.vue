@@ -36,7 +36,6 @@ export default {
   mounted() {
     let touch = {}
     this.$el.addEventListener('mousedown', (evt) => {
-      console.log('mousedown')
       touch.startX = evt.clientX
       touch.endX = 0
     })
@@ -45,7 +44,6 @@ export default {
       touch.endX = 0
     })
     this.$el.addEventListener('mousemove', (evt) => {
-      console.log('mousemove')
       touch.endX = evt.clientX
     })
     this.$el.addEventListener('touchmove', (evt) => {
@@ -68,8 +66,8 @@ export default {
         this.$el.scrollLeft = value
       })
     }
-    this.$el.addEventListener('mouseup', () => calcMouse())
-    this.$el.addEventListener('touchend', () => calcMouse())
+    this.$el.addEventListener('mouseup', calcMouse)
+    this.$el.addEventListener('touchend', calcMouse)
   },
   methods: {
     ...mapMutations(['selectTodo', 'nextTodo', 'prevTodo'])
@@ -95,7 +93,7 @@ export default {
   }
 
   .todo {
-    border-radius: 8px;
+    border-radius: var(--app-border-radius);
     background-color: #fff;
   }
 }

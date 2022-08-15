@@ -39,7 +39,6 @@ export default {
   },
   methods: {
     openSideBar() {
-      console.log('open sidebar')
       this.visibleSidebar = true
     }
   }
@@ -48,6 +47,7 @@ export default {
 
 <style lang="scss">
 .home {
+  position: relative;
   width: 100%;
   height: 100vh;
   color: #fff;

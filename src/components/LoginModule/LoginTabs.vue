@@ -29,7 +29,7 @@ export default {
     display: block;
     padding: 4px 10px;
     border: 1px solid #fff;
-    border-radius: 2px;
+    border-radius: var(--app-border-radius);
     text-align: center;
     transition: all .6s ease;
     white-space: nowrap;

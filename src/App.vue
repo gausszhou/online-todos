@@ -15,12 +15,4 @@
   margin: 0 auto;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.5s ease;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>

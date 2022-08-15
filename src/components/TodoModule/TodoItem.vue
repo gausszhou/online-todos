@@ -1,11 +1,15 @@
 <template>
-  <div class="todo" @dblclick="handleClick" :class="{ 'todo__selected': selected }">
+  <div
+    class="todo"
+    @dblclick="handleClick"
+    :class="{ todo__selected: selected }"
+  >
     <!--  -->
     <div class="todo-head">
       <div class="todo-icon" :style="{ color }">
         <i :class="['fa', `fa-${todo.icon}`]"></i>
       </div>
-      <div class="todo-menu"  ><i class="fa fa-ellipsis-v"></i></div>
+      <div class="todo-menu"><i class="fa fa-ellipsis-v"></i></div>
     </div>
     <!--  -->
     <div class="todo-body">
@@ -41,71 +45,88 @@
   </div>
 </template>
 <script>
-
-import { today, tomorrow } from "@/shared";
-import Task from "./Task.vue";
+import { today, tomorrow } from '@/shared'
+import Task from './Task.vue'
 export default {
-  name: "TodoItem",
+  name: 'TodoItem',
   components: {
-    Task,
+    Task
   },
   props: {
     todo: {
       type: Object,
-      required: true,
+      required: true
     },
     selected: {
-      type: Boolean,
-    },
+      type: Boolean
+    }
   },
   computed: {
     color() {
-      return this.todo.colors[0];
+      return this.todo.colors[0]
     },
     progress() {
-      const totalCount = this.todo.tasks.filter((t) => !t.deleted).length;
+      const totalCount = this.todo.tasks.filter((t) => !t.deleted).length
       const doneCount = this.todo.tasks.filter(
         (t) => !t.deleted && t.done
-      ).length;
-      return `${Math.round((doneCount / totalCount) * 100)}%`;
+      ).length
+      return `${Math.round((doneCount / totalCount) * 100)}%`
     },
     progressColor() {
-      const colorLeft = `color-stop(30%, ${this.todo.colors[0]})`;
-      const colorRight = `to(${this.todo.colors[1]})`;
-      return `-webkit-gradient(linear, left bottom, right bottom, ${colorLeft}, ${colorRight})`;
+      const colorLeft = `color-stop(30%, ${this.todo.colors[0]})`
+      const colorRight = `to(${this.todo.colors[1]})`
+      return `-webkit-gradient(linear, left bottom, right bottom, ${colorLeft}, ${colorRight})`
     },
     todayTasks() {
       return this.todo.tasks.filter((task) => {
-        return task.date >= today && task.date < tomorrow;
-      });
+        return task.date >= today && task.date < tomorrow
+      })
     },
     tomorrowTasks() {
       return this.todo.tasks.filter((task) => {
-        return task.date >= tomorrow;
-      });
+        return task.date >= tomorrow
+      })
     },
     outdatedTasks() {
       return this.todo.tasks.filter((task) => {
-        return task.date < today;
-      });
-    },
+        return task.date < today
+      })
+    }
+  },
+  mounted() {
+    let touch = {}
+    this.$el.addEventListener('mousedown', (evt) => {
+      touch.startX = evt.clientX
+      touch.startY = evt.clientY
+      touch.endX = 0
+      touch.endX = 0
+    })
+    const calcMouse = (evt) => {
+      touch.endX = evt.clientX
+      touch.endY = evt.clientY
+      if(Math.abs(touch.endX - touch.startX)+ Math.abs(touch.endY - touch.startY) < 20){
+        this.handleClick()
+
+      }
+    }
+    this.$el.addEventListener('mouseup', calcMouse)
   },
   methods: {
     handleClick() {
-      const appRect = document.querySelector("#app").getBoundingClientRect();
-      const elRect = this.$el.getBoundingClientRect();
-      const todo = this.todo;
-      const rect = {};
-      rect.top = elRect.top - appRect.top;
-      rect.left = elRect.left - appRect.left;
-      rect.width = elRect.width;
-      rect.height = elRect.height;
-      rect.appWidth = appRect.width;
-      rect.appHeight = appRect.height;
-      this.$emit("select", { rect, todo });
-    },
-  },
-};
+      const appRect = document.querySelector('#app').getBoundingClientRect()
+      const elRect = this.$el.getBoundingClientRect()
+      const todo = this.todo
+      const rect = {}
+      rect.top = elRect.top - appRect.top
+      rect.left = elRect.left - appRect.left
+      rect.width = elRect.width
+      rect.height = elRect.height
+      rect.appWidth = appRect.width
+      rect.appHeight = appRect.height
+      this.$emit('select', { rect, todo })
+    }
+  }
+}
 </script>
 
 <style lang="scss">

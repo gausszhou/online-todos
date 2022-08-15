@@ -1,10 +1,12 @@
 <template>
-  <transition name="slide">
-    <div class="app-sidebar">
-      <div class="app-sidebar-menu">Logout</div>
-      <div class="app-sidebar-mask" @click="$emit('close')"></div>
-    </div>
-  </transition>
+  <div class="app-sidebar">
+    <transition name="slide">
+      <div class="app-sidebar-menu">
+        <div>Logout</div>
+      </div>
+    </transition>
+    <div class="app-sidebar-mask" @click="$emit('close')"></div>
+  </div>
 </template>
 
 <script>
@@ -35,17 +37,16 @@ export default {
   width: 100vw;
   height: 100vh;
   z-index: 9;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .app-sidebar-menu {
   position: absolute;
-  left:0;
+  left: 0;
   top: 0;
-  width: 160px;
+  width: 200px;
   height: 100vh;
   z-index: 10;
   background-color: #fff;
 }
-
 </style>

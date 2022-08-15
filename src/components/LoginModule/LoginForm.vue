@@ -2,18 +2,32 @@
   <div class="login-form">
     <div class="login-form-row login-form-row1">
       <div class="login-text">
-        <LoginTextfiled label="First name" icon="user" />
-        <LoginTextfiled label="Last name" icon />
+        <LoginTextfiled label="First name" icon="user" value="Gauss" />
+        <LoginTextfiled label="Last name" icon value="Zhou" />
       </div>
     </div>
     <div class="login-form-row login-form-row2">
-      <LoginTextfiled label="Email address" icon="envelope-o" />
+      <LoginTextfiled
+        label="Email address"
+        icon="envelope-o"
+        value="gausszhou@qq.com"
+      />
     </div>
     <div class="login-form-row login-form-row3">
-      <LoginTextfiled label="Enter passwords" icon="lock" />
+      <LoginTextfiled
+        label="Enter passwords"
+        icon="lock"
+        value="todo"
+        type="password"
+      />
     </div>
     <div class="login-form-row login-form-row4">
-      <LoginTextfiled label="Re-Enter passwords" icon="lock" />
+      <LoginTextfiled
+        label="Re-Enter passwords"
+        icon="lock"
+        value="todo"
+        type="password"
+      />
     </div>
     <div class="login-form-row login-form-row5">
       <LoginCheckbox label="Keep me sign in" icon="lock" />
@@ -26,21 +40,21 @@
 </template>
 
 <script>
-import LoginTextfiled from "./LoginTextfiled.vue";
-import LoginCheckbox from "./LoginCheckbox.vue";
-import LoginButton from "./LoginButton.vue";
+import LoginTextfiled from './LoginTextfiled.vue'
+import LoginCheckbox from './LoginCheckbox.vue'
+import LoginButton from './LoginButton.vue'
 export default {
   components: {
     LoginTextfiled,
     LoginCheckbox,
-    LoginButton,
+    LoginButton
   },
   methods: {
     onSubmit(val) {
-      this.$router.push({ name: "Home" });
-    },
-  },
-};
+      this.$router.push({ name: 'Home' })
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -66,10 +80,10 @@ export default {
   .login-textfield {
     border-radius: 0;
     &:first-child {
-      border-radius: 2px 0 0 2px;
+      border-radius: var(--app-border-radius) 0 0 var(--app-border-radius);
     }
     &:last-child {
-      border-radius: 0 2px 2px 0;
+      border-radius: 0 var(--app-border-radius) var(--app-border-radius) 0;
     }
   }
 }

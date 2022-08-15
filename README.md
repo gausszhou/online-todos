@@ -1,7 +1,9 @@
 # Planable
 
-
 ## TodoList
+
+- [ ] 本地数据存储
+- [ ] 
 
 ## 学习资料
 
@@ -13,6 +15,8 @@ https://www.bilibili.com/video/BV1C4411C7bd
 
 16分钟使用Vue开发一个TodoApp
 https://www.bilibili.com/video/BV1sJ411c7cf
+
+## 其他资料
 
 16分钟，学会使用Vue开发一个卡片动效
 https://www.bilibili.com/video/BV1rJ411g7aB

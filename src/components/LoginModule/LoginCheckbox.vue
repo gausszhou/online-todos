@@ -41,7 +41,7 @@ export default {
   }
 
   label::before {
-    border-radius: 3px;
+    border-radius: var(--app-border-radius);
     background-color: #fff;
     box-shadow: 0 1px 1px #0066d0;
   }

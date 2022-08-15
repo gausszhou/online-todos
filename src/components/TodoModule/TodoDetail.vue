@@ -112,7 +112,7 @@ export default {
 }
 .show-leave-to,
 .show-enter {
-  border-radius: 8px;
+  border-radius: var(--app-border-radius);
   .todo {
     padding: 0;
   }
