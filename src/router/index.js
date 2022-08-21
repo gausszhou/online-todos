@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: { name: 'Home' }
+    redirect: { name: 'Login' }
   },
   {
     path: '/home',
@@ -27,7 +27,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: process.env.BASE_URL || "/online-todos/",
   routes
 })
 
