@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import animation from '@/lib/animation'
+import animation from '@gausszhou/animation'
 import { mapState, mapMutations } from 'vuex'
 import TodoItem from './TodoItem.vue'
 export default {
